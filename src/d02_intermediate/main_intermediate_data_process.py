@@ -1,4 +1,4 @@
-from d01_data.load_data import load_data
+from src.d01_data.load_data import load_data
 from d02_intermediate.transform_data import *
 from d02_intermediate.save_int_data import save_int_data
 
