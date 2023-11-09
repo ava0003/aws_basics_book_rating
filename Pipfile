@@ -5,6 +5,8 @@ name = "pypi"
 
 [packages]
 psycopg2 = "*"
+boto3 = "*"
+sqlalchemy = "*"
 
 [dev-packages]
 ipykernel = "*"

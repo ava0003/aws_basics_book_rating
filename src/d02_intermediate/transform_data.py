@@ -7,9 +7,19 @@ from d00_utils.contains_letters import contains_letters
 
 def books_data_treatment(df):
     
+    # Data cleaning 
+    # ISBN should contain only numbers
+    df = df[~df['ISBN'].apply(lambda x: not contains_letters(x))]
+    
+    # Clean year of publication column
+    df['Year-Of-Publication'] = pd.to_numeric(df['Year-Of-Publication'], errors='coerce').fillna(0).astype(int)
+    
+    # Keep ISBN length in order to keep the same length in ratings data
     df['ISBN_length'] = df['ISBN'].str.len()
     df_books_len_list = df['ISBN_length'].unique().tolist()
     breakpoint()
+    df.drop(['ISBN_length','Image-URL-S', 'Image-URL-M', 'Image-URL-L'], axis =1, inplace=True)
+    
     return{
         'df_books_intermediate' : df,
         'df_isbn_len_list' : df_books_len_list
@@ -27,8 +37,9 @@ def users_data_treatment(df):
     # Data transformation
     # Cast age type into int
 
-    df['Age'] = pd.to_numeric(df['Age'], errors='coerce').astype('Int64')
+    df['Age'] = pd.to_numeric(df['Age'], errors='coerce').fillna(0).astype('Int64')
 
+    df.drop(['Location'], axis=1, inplace=True)
     
     return df
     
