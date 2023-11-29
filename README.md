@@ -65,3 +65,4 @@ Subsequently, we will utilize the Visual ETL tool to define all the stages of th
 
 The source code related to steps 1 to 4 is located in the src and notebooks directories. Steps from stage 5 to the end, including screenshots, are available in the doc/screenshots directory.
 
+All credentials and paths used in config.ini have been removed for security reasons. You'll need to configure your own credentials and paths following the instructions provided in the project's documentation.
