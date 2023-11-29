@@ -8,6 +8,7 @@
 - [Step 5 - Understand AWS Glue](#step-5---understand-aws-glue)
 - [Step 6 - Create redshift cluster](#step-6---create-redshift-cluster)
 - [Step 7 - ETL Pipeline from S3 to Redshift](#step-7---etl-pipeline-from-s3-to-redshift)
+- [Note](#note)
 
 
 ## Introduction
@@ -59,3 +60,8 @@ Next, it's time to create the cluster in Redshift, along with the corresponding 
 The final stage involves creating an ETL (Extract, Transform, Load) process that transitions from the three tables we have in S3 (users, ratings, and books) to the four tables defined in our model and created in Redshift (fact table + dimensional tables). To achieve this, the initial step is to set up Glue by configuring the crawler, choosing data sources, defining crawlers, configuring security settings, and setting up the output destination.
 
 Subsequently, we will utilize the Visual ETL tool to define all the stages of the pipeline. This involves structuring the sequence of Extract, Transform, and Load tasks necessary to transform and transfer data from the source tables in S3 to the destination tables in Redshift.
+
+## Note
+
+The source code related to steps 1 to 4 is located in the src and notebooks directories. Steps from stage 5 to the end, including screenshots, are available in the doc/screenshots directory.
+
